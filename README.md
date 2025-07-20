@@ -40,7 +40,7 @@ Send personalized bulk emails directly from your Google Sheet — no billing, no
 ## 🖼️ UI Preview
 
 <img width="911" height="230" alt="image" src="https://github.com/user-attachments/assets/333ef8ad-3bbb-43dc-8957-80b0863989ec" />
-<img width="905" height="135" alt="image" src="https://github.com/user-attachments/assets/9b998807-624c-46e1-ad3d-7f79fb15c1d0" />
+ <img width="905" height="135" alt="image" src="https://github.com/user-attachments/assets/9b998807-624c-46e1-ad3d-7f79fb15c1d0" />
 
 ---
 
