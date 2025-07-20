@@ -39,8 +39,8 @@ Send personalized bulk emails directly from your Google Sheet — no billing, no
 
 ## 🖼️ UI Preview
 
-> _(Add screenshots here if you have them)_  
-> Or paste a Figma link/mockup
+<img width="845" height="408" alt="image" src="https://github.com/user-attachments/assets/6f6df0a6-ef90-4313-87f7-90cab90b3197" />
+<img width="905" height="135" alt="image" src="https://github.com/user-attachments/assets/9b998807-624c-46e1-ad3d-7f79fb15c1d0" />
 
 ---
 
