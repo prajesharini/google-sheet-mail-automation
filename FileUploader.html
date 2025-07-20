@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f8f9fa;
+      }
+      input[type="file"] {
+        margin-bottom: 15px;
+      }
+      button {
+        background-color: #4285F4;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      #status {
+        margin-top: 15px;
+        font-weight: bold;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>📎 Upload File to Google Drive</h3>
+    <input type="file" id="fileInput" accept="*/*" />
+    <br>
+    <button onclick="uploadFile()">Upload</button>
+    <div id="status"></div>
+
+    <script>
+      function uploadFile() {
+        const file = document.getElementById("fileInput").files[0];
+        const status = document.getElementById("status");
+
+        if (!file) {
+          alert("❗ Please select a file to upload.");
+          return;
+        }
+
+        status.textContent = "Uploading...";
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const base64Data = e.target.result.split(',')[1];
+
+          google.script.run
+            .withSuccessHandler(() => {
+              status.textContent = "✅ File uploaded and link inserted!";
+              setTimeout(() => google.script.host.close(), 1000);
+            })
+            .withFailureHandler(() => {
+              status.textContent = "❌ Failed to upload file. Try again.";
+            })
+            .uploadToDrive(file.name, base64Data);
+        };
+
+        reader.readAsDataURL(file);
+      }
+    </script>
+  </body>
+</html>
